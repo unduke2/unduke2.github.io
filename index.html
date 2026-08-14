@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>João Yakubets — Game Developer</title>
+<meta name="description" content="Game developer working in Unity and C# from Braga, Portugal. Gameplay systems, enemy AI and tooling — currently lead programmer on a retro FPS in production.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://unduke2.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://unduke2.github.io/">
+<meta property="og:title" content="João Yakubets — Game Developer">
+<meta property="og:description" content="Game developer working in Unity and C# from Braga, Portugal. Gameplay systems, enemy AI and tooling — currently lead programmer on a retro FPS in production.">
+<meta property="og:image" content="https://unduke2.github.io/assets/d91d7118.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>/* vietnamese */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 300 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/4b0eb3ed.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 300 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/abf028c6.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 300 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/026dee11.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/bdad7008.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/84f0a4c5.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/50588bf2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/ce0ff7f4.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/bdad7008.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/84f0a4c5.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/50588bf2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/ce0ff7f4.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/bdad7008.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/84f0a4c5.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/50588bf2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/ce0ff7f4.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/bdad7008.woff2") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/84f0a4c5.woff2") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/50588bf2.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Martian Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("assets/ce0ff7f4.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+
+<style>
+  body { margin:0; background:#090d18; }
+  a { color:#a68bff; text-decoration:none; }
+  a:hover { color:#c4b3ff; }
+  ::selection { background:#a68bff; color:#090d18; }
+  html { scroll-behavior:smooth; }
+</style>
+<style>
+
+  @media (max-width: 900px) {
+    .g-hero, .g-split, .g-two { grid-template-columns: 1fr !important; }
+    .g-split { gap: 28px !important; }
+    .g-hero-side { grid-template-rows: 1fr 1fr !important; }
+    .g-gallery { grid-template-columns: repeat(2, 1fr) !important; }
+  }
+  @media (max-width: 600px) {
+    .pad { padding-left: 22px !important; padding-right: 22px !important; }
+    .g-hero-side { grid-template-columns: 1fr 1fr !important; grid-template-rows: none !important; }
+    .g-gallery { grid-template-columns: 1fr !important; }
+    .g-pad { padding: 24px !important; }
+  }
+  a.hv1:hover { background:#c4b3ff !important; }
+  a.hv2:hover { border-color:#a68bff !important; }
+  a.hv3:hover { border-color:#a68bff !important; color:#eaecf4 !important; }
+  a.hv4:hover { border-color:#a68bff !important; color:#eaecf4 !important; }
+  a.hv5:hover { background:#c4b3ff !important; }
+  a.hv6:hover { border-color:#a68bff !important; }
+</style>
+</head>
+<body>
+
+<div style="background:#090d18;color:#eaecf4;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased">
+
+  <header class="pad" style="max-width:1140px;margin:0 auto;padding:88px 40px 56px">
+    
+      <div style="display:inline-flex;align-items:center;gap:9px;padding:6px 13px 6px 11px;border:1px solid #2e2a4d;background:#12162a;border-radius:100px;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#a68bff;margin-bottom:32px">
+        <span style="width:6px;height:6px;border-radius:50%;background:#a68bff;display:block"></span>Open to opportunities
+      </div>
+    
+    <h1 style="font-size:clamp(48px,7vw,84px);line-height:0.96;font-weight:600;letter-spacing:-0.035em;margin:0 0 24px">João Yakubets</h1>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;font-family:'Martian Mono',monospace;font-size:12px;letter-spacing:0.04em;color:#8a92ab;margin-bottom:36px">
+      <span style="color:#a68bff">Game Developer — Unity / C#</span>
+      <span style="color:#2b3350">·</span>
+      <span>Braga, Portugal</span>
+      <span style="color:#2b3350">·</span>
+      <span>Founder, Hypnagogic Arts</span>
+    </div>
+    <p style="font-size:clamp(18px,2vw,23px);line-height:1.5;max-width:54ch;margin:0 0 40px;color:#c3c8d8;text-wrap:pretty">Two years building gameplay systems, enemy AI and tooling in Unity, with a pull toward architecture and performance. Currently in production on a retro FPS aimed at commercial release.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:10px">
+      <a href="mailto:joao.yakubets@hotmail.com" style="display:inline-flex;align-items:center;padding:12px 20px;background:#a68bff;color:#090d18;border-radius:6px;font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em;font-weight:500" class="hv1">joao.yakubets@hotmail.com</a>
+      <a href="https://github.com/unduke2" style="display:inline-flex;align-items:center;padding:12px 20px;border:1px solid #2e2a4d;background:#12162a;border-radius:6px;font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#eaecf4" class="hv2">GitHub</a>
+      <a href="https://hypnagogic.itch.io/ascensionexe" style="display:inline-flex;align-items:center;padding:12px 20px;border:1px solid #1b2236;border-radius:6px;font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#8a92ab" class="hv3">itch.io</a>
+      <a href="./Joao_Yakubets_CV.pdf" style="display:inline-flex;align-items:center;padding:12px 20px;border:1px solid #1b2236;border-radius:6px;font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#8a92ab" class="hv4">CV (PDF)</a>
+    </div>
+  </header>
+
+  <section class="pad" style="max-width:1140px;margin:0 auto;padding:0 40px">
+    <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:44px">
+      <span style="font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#a68bff;white-space:nowrap">Projects</span>
+      <div style="flex:1;height:1px;background:#1b2236"></div>
+    </div>
+
+    <article style="margin-bottom:64px">
+      <div class="g-hero" style="display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:28px">
+        <div style="position:relative;min-height:360px;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+          <img src="assets/d91d7118.png" alt="Valley of Screams" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        </div>
+        <div class="g-hero-side" style="display:grid;grid-template-rows:1fr 1fr;gap:14px">
+          <div style="position:relative;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/c9c39668.png" alt="Dungeon" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <div style="position:relative;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/658a4929.png" alt="Forest" loading="eager" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+        </div>
+      </div>
+      <div class="g-split" style="display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start">
+        <div>
+          <h2 style="font-size:34px;font-weight:600;letter-spacing:-0.025em;margin:0 0 14px;line-height:1.1">Valley of Screams</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#a68bff;border:1px solid #2e2a4d;background:#12162a;padding:5px 10px;border-radius:4px">In production</span>
+            <span style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#8a92ab;border:1px solid #1b2236;padding:5px 10px;border-radius:4px">Retro FPS</span>
+            <span style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#8a92ab;border:1px solid #1b2236;padding:5px 10px;border-radius:4px">Unity · Zenject</span>
+          </div>
+        </div>
+        <div>
+          <p style="margin:0 0 16px;color:#c3c8d8;text-wrap:pretty">The studio's first commercial title. Lead programmer on a four-person team — gameplay mechanics, enemy AI, and the systems architecture underneath both.</p>
+          <p style="margin:0;color:#8a92ab;text-wrap:pretty">The core is a composable agent framework: behaviours written once as code, exposed as ScriptableObject assets, then assembled drag-and-drop. It drives weapons, enemies, encounters and player systems, so designers can build content without waiting on me.</p>
+        </div>
+      </div>
+    </article>
+
+    <div class="g-two" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:64px">
+      <article style="border:1px solid #1b2236;border-radius:10px;padding:32px;display:flex;flex-direction:column">
+        <div style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#a68bff;margin-bottom:14px">★ Winner — PSX Horror Jam 2026</div>
+        <h2 style="font-size:26px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;line-height:1.15">Ascension.exe</h2>
+        <p style="margin:0 0 20px;color:#8a92ab;flex:1;text-wrap:pretty">A short atmospheric horror game, published on itch.io. Sole programmer in a team of four, building every mechanic around the team's art, writing and music.</p>
+        <a href="https://hypnagogic.itch.io/ascensionexe" style="font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em">Play it on itch.io →</a>
+      </article>
+      <article style="border:1px solid #1b2236;border-radius:10px;padding:32px;display:flex;flex-direction:column">
+        <div style="font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:#8a92ab;margin-bottom:14px">Live · paying customers</div>
+        <h2 style="font-size:26px;font-weight:600;letter-spacing:-0.02em;margin:0 0 14px;line-height:1.15">NextStint</h2>
+        <p style="margin:0 0 20px;color:#8a92ab;flex:1;text-wrap:pretty">A commercial offline-first PWA for EU transport compliance. Stripe billing, three languages. Sole owner of product design, architecture, specification and support.</p>
+        <a href="https://nextstint.app" style="font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em">nextstint.app →</a>
+      </article>
+    </div>
+
+    <article style="border:1px solid #1b2236;border-radius:10px;overflow:hidden;margin-bottom:20px">
+      <div style="position:relative;width:100%;aspect-ratio:21/9;background:#05070e;border-bottom:1px solid #1b2236">
+        <img src="assets/c7254967.png" alt="Infinity" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="g-split g-pad" style="padding:34px;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start">
+        <div>
+          <h2 style="font-size:28px;font-weight:600;letter-spacing:-0.025em;margin:0 0 14px;line-height:1.15">Infinity</h2>
+          <p style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.9;letter-spacing:0.03em;color:#8a92ab;margin:0">Unity 6 · URP · HLSL<br>Solo, AI-assisted · In development<br>~4 ms at 1080p</p>
+        </div>
+        <div>
+          <p style="margin:0 0 16px;color:#c3c8d8;text-wrap:pretty">A space renderer where you don't render objects, you render spacetime. Every pixel is light integrated along a geodesic through a curvature field, so swapping the metric swaps the phenomenon.</p>
+          <p style="margin:0;color:#8a92ab;text-wrap:pretty">Schwarzschild lensing runs as a fullscreen raymarch with a shadow radius matching theory to 0.05%. Hold SPACE and an Alcubierre bubble metric engages: the sky compresses into a forward cone, the rear goes black by infinite redshift.</p>
+        </div>
+      </div>
+    </article>
+
+    <article style="border:1px solid #1b2236;border-radius:10px;overflow:hidden;margin-bottom:80px">
+      <div style="position:relative;width:100%;aspect-ratio:21/9;background:#05070e;border-bottom:1px solid #1b2236">
+        <img src="assets/e1cbce32.gif" alt="20,000-drone swarm" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="g-split g-pad" style="padding:34px;display:grid;grid-template-columns:1fr 1.2fr;gap:48px;align-items:start">
+        <div>
+          <h2 style="font-size:28px;font-weight:600;letter-spacing:-0.025em;margin:0 0 14px;line-height:1.15">Space Drone Simulator</h2>
+          <p style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.9;letter-spacing:0.03em;color:#8a92ab;margin:0 0 18px">Unity DOTS/ECS · Burst · Jobs<br>Solo · Public repository</p>
+          <a href="https://github.com/unduke2/Space-Drone-Simulator" style="font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em">Read the write-up →</a>
+        </div>
+        <div>
+          <p style="margin:0 0 16px;color:#c3c8d8;text-wrap:pretty">The same 20,000-drone steering swarm implemented twice — ECS with Burst and Jobs, and idiomatic MonoBehaviours — sharing identical logic, so architecture is the only variable.</p>
+          <p style="margin:0;color:#8a92ab;text-wrap:pretty">23 instrumented builds with median/p95/p99 sampling. The headline number is 21.7×, but the honest like-for-like number is 13.2× once you account for a collider flaw in the GameObject path.</p>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section style="border-top:1px solid #1b2236;background:#0b0f1c">
+    <div class="pad" style="max-width:1140px;margin:0 auto;padding:72px 40px">
+      <div style="display:flex;align-items:baseline;gap:20px;margin-bottom:16px">
+        <span style="font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#a68bff;white-space:nowrap">Gallery</span>
+        <div style="flex:1;height:1px;background:#1b2236"></div>
+      </div>
+      <p style="max-width:52ch;color:#8a92ab;margin:0 0 44px;text-wrap:pretty">Jams, environment work and studies from the last three years.</p>
+
+      <div class="g-gallery" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px 18px">
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/d3bc4bce.png" alt="Site 13 gameplay" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">What Happened to Site 13 — SCP Jam 2025<br><span style="color:#8a92ab">Immersive horror FPS based on SCP-1730</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/bfedfdef.png" alt="Site 13 service corridor" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">Site 13 — service corridors<br><span style="color:#8a92ab">Modular industrial kit, Unity URP</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/2fe6c8d9.png" alt="Site 13 containment wing" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">Site 13 — containment wing<br><span style="color:#8a92ab">Lighting and material pass</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/1bda8f9c.png" alt="Site 13 vision" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">Site 13 — hallucination sequence<br><span style="color:#8a92ab">Sky and post-processing shift</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/9cd982ad.png" alt="Site 13 exterior" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">Site 13 — approach<br><span style="color:#8a92ab">Exterior blockout and fog</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/8fb462ba.png" alt="Site 13 interior" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">Site 13 — interior<br><span style="color:#8a92ab">First-person weapon and HUD</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/c82407e1.png" alt="Blender tone study" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">Tone study for Site 13<br><span style="color:#8a92ab">Blender — finding the vibe before building it</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/1f6d481e.png" alt="Purple beach" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">The purple beach<br><span style="color:#8a92ab">Early environment experiment — no brief, I just wanted to see it</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/46c0b38b.png" alt="Purple beach, second angle" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">The purple beach<br><span style="color:#8a92ab">Second angle</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/cd0cec35.png" alt="Photo reference" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">Reference photograph<br><span style="color:#8a92ab">Camera solved with fSpy</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/13de0cdc.png" alt="Blender recreation" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#a68bff;margin:12px 0 0">Recreated in Blender<br><span style="color:#8a92ab">Matching a photo exactly, to learn what I'd otherwise approximate</span></figcaption>
+        </figure>
+        <figure style="margin:0">
+          <div style="position:relative;aspect-ratio:16/9;border:1px solid #1b2236;border-radius:8px;overflow:hidden">
+            <img src="assets/068c7133.png" alt="Forest meadow" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          </div>
+          <figcaption style="font-family:'Martian Mono',monospace;font-size:11px;line-height:1.75;letter-spacing:0.03em;color:#c3c8d8;margin:12px 0 0">First Unity production class, 2023<br><span style="color:#8a92ab">Environment and lighting experiment</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid #1b2236">
+    <div class="pad" style="max-width:1140px;margin:0 auto;padding:64px 40px 72px;display:flex;flex-wrap:wrap;gap:32px;align-items:end;justify-content:space-between">
+      <div>
+        <h2 style="font-size:clamp(28px,3.4vw,40px);font-weight:600;letter-spacing:-0.03em;margin:0 0 14px;line-height:1.1">Get in touch</h2>
+        <p style="max-width:44ch;color:#8a92ab;margin:0;text-wrap:pretty">Braga, Portugal. Happy to talk about gameplay engineering, Unity architecture, or what a four-person studio looks like from the inside.</p>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <a href="mailto:joao.yakubets@hotmail.com" style="display:inline-flex;align-items:center;padding:14px 24px;background:#a68bff;color:#090d18;border-radius:6px;font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em;font-weight:500" class="hv5">joao.yakubets@hotmail.com</a>
+        <a href="https://github.com/unduke2" style="display:inline-flex;align-items:center;padding:14px 24px;border:1px solid #2e2a4d;border-radius:6px;font-family:'Martian Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#eaecf4" class="hv6">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body></html>
